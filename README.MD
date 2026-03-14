@@ -2,7 +2,19 @@
 
 ¡Hola! This is your **poetry repository on GitHub**. Think of GitHub as a folder on the internet where all your files live — and where your future website will be hosted for free.
 
+Everything here is branded as **A. Donis** — your pen name is the brand on the website, the bio, the license documents, the pitch, everything.
+
 Here is a map of everything that's here and where to find it.
+
+---
+
+## ✏️ First thing to do — add your contact details
+
+All the contact placeholders across the site and marketing docs are listed in one place:
+
+👉 **[`CONTACT_INFO.md`](./CONTACT_INFO.md)** ← open this first
+
+You can either fill it in yourself, or just reply to the pull request with your email and Instagram handle and I'll update everything for you.
 
 ---
 
@@ -17,11 +29,6 @@ The portfolio website lives in the [`/portfolio`](./portfolio) folder.
 3. In the left sidebar, click **Pages**
 4. Under *Branch*, select **`copilot/create-business-portfolio-structure`** → folder **`/(root)`** → click **Save**
 5. Wait ~2 minutes, then visit: **`https://jorge11-7.github.io/Poetry/portfolio/`** — that's your website! ✨
-
-> Before publishing, go into [`portfolio/index.html`](./portfolio/index.html) and replace the three placeholders:
-> - `[tu correo aquí / your email here]` → your real email
-> - `[tu sitio web / your website]` → can delete this line if you don't have one yet
-> - `[@tu_usuario]` → your Instagram/X handle
 
 ---
 
@@ -78,3 +85,4 @@ Just click the link in this README and GitHub will display it beautifully right 
 ---
 
 *© A. Donis · Los Amores*
+
