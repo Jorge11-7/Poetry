@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commissions — A. Donis · Poet &amp; Writer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Commissions-page extras ── */
+    .commissions-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, var(--color-bg-medium) 0%, var(--color-bg-dark) 100%);
+      padding: 5rem var(--gutter);
+      text-align: center;
+    }
+    .commissions-hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .commissions-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-accent-lt);
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+    .commissions-hero p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── Commission type cards ── */
+    .commission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .commission-card {
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(181, 128, 58, 0.3);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .commission-card .commission-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.7rem;
+    }
+    .commission-card h3 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-accent-lt);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+    }
+    .commission-card .commission-price {
+      font-size: 1.2rem;
+      color: var(--color-accent);
+      font-family: var(--font-serif);
+      margin-bottom: 0.5rem;
+    }
+    .commission-card p {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Process steps ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .process-step {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .process-step h3 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-light);
+      margin-bottom: 0.4rem;
+    }
+    .process-step p {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Intake form ── */
+    .intake-form {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(181, 128, 58, 0.35);
+      border-radius: var(--radius);
+      color: var(--color-text-light);
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      transition: border-color var(--transition);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent-lt);
+    }
+    .form-group select option {
+      background-color: var(--color-bg-dark);
+      color: var(--color-text-light);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 160px;
+      line-height: 1.7;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-submit {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .form-submit .btn {
+      padding: 0.85rem 2.5rem;
+      font-size: 1rem;
+    }
+
+    /* ── What to expect ── */
+    .expect-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .expect-list li {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: #3a2e24;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(181, 128, 58, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .expect-list li::before {
+      content: "✓";
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 700px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <h1><a href="index.html" style="color:inherit;text-decoration:none;">A. Donis</a></h1>
+        <p class="subtitle">
+          <span class="es-only">Poeta &amp; Escritor</span>
+          <span class="en-only">Poet &amp; Writer</span>
+        </p>
+      </div>
+      <nav>
+        <a href="index.html#sobre-mi">
+          <span class="es-only">Sobre mí</span>
+          <span class="en-only">About</span>
+        </a>
+        <a href="index.html#servicios">
+          <span class="es-only">Servicios</span>
+          <span class="en-only">Services</span>
+        </a>
+        <a href="index.html#muestras">
+          <span class="es-only">Trabajos</span>
+          <span class="en-only">Work</span>
+        </a>
+        <a href="pricing.html">
+          <span class="es-only">Tarifas</span>
+          <span class="en-only">Pricing</span>
+        </a>
+        <a href="index.html#contacto">
+          <span class="es-only">Contacto</span>
+          <span class="en-only">Contact</span>
+        </a>
+      </nav>
+      <div class="lang-switcher">
+        <label for="lang-select" class="lang-label">🌐</label>
+        <select id="lang-select" onchange="setLang(this.value)">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <div class="commissions-hero">
+    <div class="commissions-hero-inner">
+      <h1>
+        <span class="es-only">"Cuéntame tu historia."</span>
+        <span class="en-only">"Tell me your story."</span>
+      </h1>
+      <p>
+        <span class="es-only">Cada poema que escribo nace de un momento real. Bodas, pérdidas, cumpleaños, amor — cuéntame y lo convierto en palabras que duran.</span>
+        <span class="en-only">Every poem I write starts with a real moment. Weddings, loss, birthdays, love — tell me yours and I'll turn it into words that last.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================== COMMISSION TYPES ===================== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2>
+        <span class="es-only">Tipos de comisión</span>
+        <span class="en-only">Commission Types</span>
+      </h2>
+      <p class="section-intro">
+        <span class="es-only">No hay un momento demasiado pequeño para merecer un poema.</span>
+        <span class="en-only">No moment is too small to deserve a poem.</span>
+      </p>
+
+      <div class="commission-grid">
+
+        <div class="commission-card">
+          <div class="commission-icon">💍</div>
+          <h3>
+            <span class="es-only">Bodas &amp; Propuestas</span>
+            <span class="en-only">Weddings &amp; Proposals</span>
+          </h3>
+          <p class="commission-price">$75+</p>
+          <p>
+            <span class="es-only">Un poema para el día más importante. Lee tus votos, regálalo enmarcado, o susúrralo al oído.</span>
+            <span class="en-only">A poem for the most important day. Read your vows, give it framed, or whisper it.</span>
+          </p>
+        </div>
+
+        <div class="commission-card">
+          <div class="commission-icon">❤️</div>
+          <h3>
+            <span class="es-only">Amor &amp; Aniversarios</span>
+            <span class="en-only">Love &amp; Anniversaries</span>
+          </h3>
+          <p class="commission-price">$50+</p>
+          <p>
+            <span class="es-only">Para la persona que te cambia el día con solo aparecer. Un poema que diga lo que no encuentras cómo decir.</span>
+            <span class="en-only">For the person who changes your day just by showing up. A poem that says what you can't find the words for.</span>
+          </p>
+        </div>
+
+        <div class="commission-card">
+          <div class="commission-icon">🕊️</div>
+          <h3>
+            <span class="es-only">Pérdida &amp; Tributo</span>
+            <span class="en-only">Loss &amp; Tribute</span>
+          </h3>
+          <p class="commission-price">$75+</p>
+          <p>
+            <span class="es-only">Honrar a quien ya no está. Con cuidado, con respeto, con honestidad.</span>
+            <span class="en-only">Honoring someone no longer here. With care, respect, and honesty.</span>
+          </p>
+        </div>
+
+        <div class="commission-card">
+          <div class="commission-icon">🎂</div>
+          <h3>
+            <span class="es-only">Cumpleaños</span>
+            <span class="en-only">Birthdays</span>
+          </h3>
+          <p class="commission-price">$40+</p>
+          <p>
+            <span class="es-only">Un regalo que no se olvida. Poema personalizado para celebrar a alguien especial.</span>
+            <span class="en-only">A gift that isn't forgotten. A personalized poem to celebrate someone special.</span>
+          </p>
+        </div>
+
+        <div class="commission-card">
+          <div class="commission-icon">✨</div>
+          <h3>
+            <span class="es-only">Personalizado</span>
+            <span class="en-only">Custom</span>
+          </h3>
+          <p class="commission-price">
+            <span class="es-only">Precio según proyecto</span>
+            <span class="en-only">Quote on request</span>
+          </p>
+          <p>
+            <span class="es-only">¿Algo que no encaje en las categorías anteriores? Cuéntame. Si puedo escribirlo, lo haré.</span>
+            <span class="en-only">Something that doesn't fit the categories above? Tell me. If I can write it, I will.</span>
+          </p>
+        </div>
+
+        <div class="commission-card">
+          <div class="commission-icon">💼</div>
+          <h3>
+            <span class="es-only">Copywriting de Marca</span>
+            <span class="en-only">Brand Copywriting</span>
+          </h3>
+          <p class="commission-price">
+            <span class="es-only">Ver tarifas</span>
+            <span class="en-only">See pricing</span>
+          </p>
+          <p>
+            <span class="es-only">Textos con voz literaria para marcas. Consulta los detalles en la página de tarifas.</span>
+            <span class="en-only">Literary-voice copy for brands. See full details on the pricing page.</span>
+          </p>
+          <a href="pricing.html" style="display:inline-block;margin-top:0.8rem;font-family:var(--font-sans);font-size:0.82rem;color:var(--color-accent-lt);text-decoration:none;letter-spacing:0.04em;">
+            <span class="es-only">Ver tarifas →</span>
+            <span class="en-only">View pricing →</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section class="section section-light">
+    <div class="container">
+      <h2>
+        <span class="es-only">Cómo funciona</span>
+        <span class="en-only">How It Works</span>
+      </h2>
+      <p class="section-intro">
+        <span class="es-only">Cuatro pasos sencillos del primer mensaje al poema final.</span>
+        <span class="en-only">Four simple steps from first message to finished poem.</span>
+      </p>
+
+      <div class="process-steps">
+
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>
+            <span class="es-only">Llena el formulario</span>
+            <span class="en-only">Fill the form</span>
+          </h3>
+          <p>
+            <span class="es-only">Cuéntame todo lo que puedas sobre el momento, la persona, el tono que buscas.</span>
+            <span class="en-only">Tell me everything you can about the moment, the person, the tone you're looking for.</span>
+          </p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>
+            <span class="es-only">Me comunico contigo</span>
+            <span class="en-only">I reach out</span>
+          </h3>
+          <p>
+            <span class="es-only">Respondo en menos de 24 horas para confirmar detalles y acordar el pago.</span>
+            <span class="en-only">I respond within 24 hours to confirm details and arrange payment.</span>
+          </p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>
+            <span class="es-only">Escribo</span>
+            <span class="en-only">I write</span>
+          </h3>
+          <p>
+            <span class="es-only">El primer borrador llega en 3–5 días. Escrito a mano, desde cero, para ti.</span>
+            <span class="en-only">The first draft arrives in 3–5 days. Written by hand, from scratch, for you.</span>
+          </p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>
+            <span class="es-only">Refinamos juntos</span>
+            <span class="en-only">We refine</span>
+          </h3>
+          <p>
+            <span class="es-only">Dos rondas de revisión incluidas. El poema es tuyo cuando se siente bien.</span>
+            <span class="en-only">Two revision rounds included. The poem is yours when it feels right.</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INTAKE FORM ===================== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2>
+        <span class="es-only">Formulario de solicitud</span>
+        <span class="en-only">Commission Request</span>
+      </h2>
+      <p class="section-intro">
+        <span class="es-only">Entre más detalle me des, mejor será el poema.</span>
+        <span class="en-only">The more detail you give me, the better the poem.</span>
+      </p>
+
+      <form class="intake-form" action="mailto:av.donis@gmail.com" method="post" enctype="text/plain">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">
+              <span class="es-only">Nombre</span>
+              <span class="en-only">Name</span>
+            </label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">
+              <span class="es-only">Correo electrónico</span>
+              <span class="en-only">Email</span>
+            </label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="commission-type">
+              <span class="es-only">Tipo de comisión</span>
+              <span class="en-only">Type of commission</span>
+            </label>
+            <select id="commission-type" name="commission-type" required>
+              <option value="" disabled selected>
+                — select —
+              </option>
+              <option value="wedding-proposal">
+                Weddings / Proposals ($75+)
+              </option>
+              <option value="love-anniversary">
+                Love / Anniversaries ($50+)
+              </option>
+              <option value="loss-tribute">
+                Loss / Tribute ($75+)
+              </option>
+              <option value="birthday">
+                Birthdays ($40+)
+              </option>
+              <option value="custom">
+                Custom (quote on request)
+              </option>
+              <option value="brand-copy">
+                Brand Copywriting (see pricing)
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="language">
+              <span class="es-only">Idioma preferido</span>
+              <span class="en-only">Language preference</span>
+            </label>
+            <select id="language" name="language" required>
+              <option value="" disabled selected>
+                — select —
+              </option>
+              <option value="english">English</option>
+              <option value="spanish">Español / Spanish</option>
+              <option value="bilingual">Bilingüe / Bilingual</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="deadline">
+            <span class="es-only">Fecha límite (si aplica)</span>
+            <span class="en-only">Deadline (if applicable)</span>
+          </label>
+          <input type="date" id="deadline" name="deadline" />
+        </div>
+
+        <div class="form-group">
+          <label for="story">
+            <span class="es-only">Cuéntame todo</span>
+            <span class="en-only">Tell me everything</span>
+          </label>
+          <textarea id="story" name="story" required></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn">
+            <span class="es-only">Enviar solicitud →</span>
+            <span class="en-only">Send my request →</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT TO EXPECT ===================== -->
+  <section class="section section-light">
+    <div class="container" style="text-align:center;">
+      <h2>
+        <span class="es-only">Qué esperar</span>
+        <span class="en-only">What to expect</span>
+      </h2>
+      <p class="section-intro">
+        <span class="es-only">Sin sorpresas. Sin esperas interminables. Solo el poema.</span>
+        <span class="en-only">No surprises. No endless waiting. Just the poem.</span>
+      </p>
+
+      <ul class="expect-list">
+        <li>
+          <span class="es-only">Respuesta en menos de 24 horas</span>
+          <span class="en-only">Response within 24 hours</span>
+        </li>
+        <li>
+          <span class="es-only">Primer borrador en 3–5 días</span>
+          <span class="en-only">First draft in 3–5 days</span>
+        </li>
+        <li>
+          <span class="es-only">Dos rondas de revisión incluidas</span>
+          <span class="en-only">Two revision rounds included</span>
+        </li>
+        <li>
+          <span class="es-only">Entregado en PDF</span>
+          <span class="en-only">Delivered as PDF</span>
+        </li>
+        <li>
+          <span class="es-only">Disponible en versión bilingüe</span>
+          <span class="en-only">Bilingual version available</span>
+        </li>
+        <li>
+          <span class="es-only">Pago por PayPal o Venmo</span>
+          <span class="en-only">Payment via PayPal or Venmo</span>
+        </li>
+      </ul>
+
+      <a href="index.html#contacto" class="btn btn-outline"
+        style="border-color:var(--color-accent);color:var(--color-accent);">
+        <span class="es-only">¿Tienes preguntas? Escríbeme →</span>
+        <span class="en-only">Have questions? Write to me →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2025 A. Donis · <em>Los Amores</em></p>
+      <p class="footer-links">
+        <a href="index.html">
+          <span class="es-only">Inicio</span>
+          <span class="en-only">Home</span>
+        </a> ·
+        <a href="index.html#poemas">
+          <span class="es-only">Colección</span>
+          <span class="en-only">Collection</span>
+        </a> ·
+        <a href="pricing.html">
+          <span class="es-only">Tarifas</span>
+          <span class="en-only">Pricing</span>
+        </a> ·
+        <a href="commissions.html" style="color:var(--color-accent-lt);">
+          <span class="es-only">Comisiones</span>
+          <span class="en-only">Commissions</span>
+        </a> ·
+        <a href="index.html#contacto">
+          <span class="es-only">Contacto</span>
+          <span class="en-only">Contact</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===================== LANGUAGE SCRIPT ===================== -->
+  <script>
+    function setLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('lang-select').value = lang;
+      localStorage.setItem('adonis-lang', lang);
+    }
+    (function () {
+      const saved = localStorage.getItem('adonis-lang');
+      if (saved === 'en' || saved === 'es') setLang(saved);
+    })();
+  </script>
+
+</body>
+</html>
