@@ -349,6 +349,16 @@ nav a:hover {
   margin-bottom: 0.5rem;
 }
 
+.service-price {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 0.8rem;
+  margin-bottom: 0 !important;
+  letter-spacing: 0.02em;
+}
+
 .services-cta {
   text-align: center;
 }
