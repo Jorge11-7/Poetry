@@ -182,20 +182,20 @@ No debo.
 
 Seguí caminando, escuche tu risa al caer de la lluvia,  
 Vi a los patitos aprender a caminar, y no,  
-No te pense.  
+No te pensé.  
 
 Vi a un niño, que estaba jugando con su padre,  
 Y de alguna manera no,  
-No te pense.  
+No te pensé.  
 
-Llegó la noche, y me aliste para dormirme,  
-Me vi con una lagrima de orgullo,  
-Porque hoy, otra batalla gane.  
+Llegó la noche, y me alisté para dormirme,  
+Me vi con una lágrima de orgullo,  
+Porque hoy, otra batalla gané.  
 
-Después fui a mi cama y me recoste,  
+Después fui a mi cama y me recosté,  
 Pero me sentí muy incómodo.  
 
-Hasta que mis gafas, me quite.  
+Hasta que mis gafas, me quité.  
 
 ---
 
@@ -203,7 +203,7 @@ Hasta que mis gafas, me quite.
 ### Después de Mil Poemas
 
 Arrancaré las páginas de mi cuaderno,  
-Subiré a donde te quize y las dejare ir volando,  
+Subiré a donde te quise y las dejaré ir volando,  
 
 Que los pájaros se aprendan los cantos  
 Y le recuerden al enamorado,  
