@@ -153,8 +153,24 @@ nav a:hover {
 .hero-attribution {
   color: var(--color-text-muted);
   font-size: 0.9rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-style: normal;
+}
+
+.hero-translation {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-text-light);
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
 }
 
 /* ── Sections ── */
