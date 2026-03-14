@@ -31,7 +31,7 @@ Quedo a tu disposición para cualquier pregunta.
 
 Un saludo,  
 **A. Donis**  
-[tu correo] | [tu portafolio]
+av.donis@gmail.com · 214-207-5521
 
 ---
 
@@ -65,7 +65,7 @@ Quedo a tu disposición para resolver cualquier duda.
 
 Atentamente,  
 **A. Donis**  
-[tu correo] | [tu portafolio]
+av.donis@gmail.com · 214-207-5521
 
 ---
 
@@ -91,11 +91,11 @@ Mi colección de poesía, *Los Amores*, es una muestra de mi estilo: íntimo, pr
 
 ¿Tienes 15 minutos para una llamada exploratoria esta semana?
 
-Puedes ver más de mi trabajo en: [tu portafolio]
+Puedes ver más de mi trabajo en: https://jorge11-7.github.io/Poetry/portfolio/
 
 Gracias por tu tiempo,  
 **A. Donis**  
-[tu correo] | [tu portafolio]
+av.donis@gmail.com · 214-207-5521
 
 ---
 

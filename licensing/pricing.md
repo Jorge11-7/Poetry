@@ -67,4 +67,4 @@
 ---
 
 *Tarifas vigentes a partir de [mes/año]. Sujetas a revisión anual.*  
-*Para proyectos de mayor envergadura, solicita una cotización personalizada: [tu correo]*
+*Para proyectos de mayor envergadura, solicita una cotización personalizada: av.donis@gmail.com*

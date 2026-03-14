@@ -28,4 +28,4 @@ Available for custom poem commissions, usage licensing, and copywriting projects
 
 ---
 
-*Contact: [your email here] | Portfolio: [your portfolio URL here]*
+*Contact: av.donis@gmail.com | Portfolio: https://jorge11-7.github.io/Poetry/portfolio/*

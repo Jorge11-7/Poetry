@@ -120,4 +120,4 @@ Consulta las tarifas orientativas en [pricing.md](../licensing/pricing.md).
 ---
 
 *Gracias por confiar en mi trabajo. Cada poema es único y lo escribo con dedicación total.*  
-**— A. Donis** | [tu correo] | [tu portafolio]
+**— A. Donis** | av.donis@gmail.com | https://jorge11-7.github.io/Poetry/portfolio/

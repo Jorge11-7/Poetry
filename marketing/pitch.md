@@ -52,10 +52,22 @@ Entrego textos originales, listos para usar, con revisiones incluidas.
 
 ## Contacto
 
-📧 [tu correo aquí]  
-🌐 [tu portafolio aquí]  
+📧 av.donis@gmail.com  
+📞 214-207-5521  
 📍 Disponible para proyectos remotos y presenciales
 
 ---
 
-*Referencias y muestras disponibles a solicitud.*
+## Muestras de copywriting / Copywriting samples
+
+> *"Do the world a favor. Let your soul be seen."*
+
+> *"Comida que pruebas, antes que llegue a tu boca."*
+
+> *"Comida de casa, aunque no estés en ella."*
+
+> *"Rome wasn't built in a day, but it was built."*
+
+---
+
+*Referencias y muestras adicionales disponibles a solicitud.*

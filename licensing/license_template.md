@@ -9,7 +9,7 @@
 **Fecha:** [DD/MM/AAAA]
 
 **Licenciante:** A. Donis  
-**Correo del Licenciante:** [tu correo]
+**Correo del Licenciante:** av.donis@gmail.com
 
 **Licenciatario:** [Nombre completo o razón social]  
 **Correo del Licenciatario:** [correo del cliente]  

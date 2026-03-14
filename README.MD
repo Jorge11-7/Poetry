@@ -8,6 +8,20 @@ Here is a map of everything that's here and where to find it.
 
 ---
 
+## 🤔 What exactly is this website?
+
+**Short answer: it's your all-in-one professional home as a writer.**
+
+It is NOT just a copywriting website. It's a poet's portfolio that does three things at once:
+
+1. **Shows who you are** — bilingual poet and writer, author of *Los Amores*
+2. **Showcases your work** — sample poems from the collection, plus copywriting lines
+3. **Offers your services** — custom commissions, licensing, and poetic copywriting for brands
+
+Think of it like an artist's portfolio + services menu + contact page, all in one URL. A client who wants a wedding poem finds it here. A brand that wants a tagline finds it here. A literary magazine that wants to know who you are finds it here. Everything in one place, under the A. Donis brand.
+
+---
+
 ## ✏️ First thing to do — add your contact details
 
 All the contact placeholders across the site and marketing docs are listed in one place:
@@ -27,7 +41,7 @@ The portfolio website lives in the [`/portfolio`](./portfolio) folder.
 1. Go to your repository on GitHub: `https://github.com/Jorge11-7/Poetry`
 2. Click the **⚙️ Settings** tab (top of the page)
 3. In the left sidebar, click **Pages**
-4. Under *Branch*, select **`copilot/create-business-portfolio-structure`** → folder **`/(root)`** → click **Save**
+4. Under *Branch*, select **`main`** (once this PR is merged) → folder **`/(root)`** → click **Save**
 5. Wait ~2 minutes, then visit: **`https://jorge11-7.github.io/Poetry/portfolio/`** — that's your website! ✨
 
 ---
