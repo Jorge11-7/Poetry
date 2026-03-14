@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — A. Donis · Poet &amp; Writer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Pricing-page extras ── */
+    .pricing-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, var(--color-bg-medium) 0%, var(--color-bg-dark) 100%);
+      padding: 5rem var(--gutter);
+      text-align: center;
+    }
+    .pricing-hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .pricing-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--color-accent-lt);
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .pricing-hero p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── Pricing cards ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .pricing-card {
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(181, 128, 58, 0.3);
+      border-radius: var(--radius);
+      padding: 2.2rem 2rem;
+      text-align: center;
+    }
+    .pricing-card h3 {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-accent-lt);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .pricing-card .price {
+      font-size: 2rem;
+      color: var(--color-accent);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-card p {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Licensing cards ── */
+    .license-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .license-card {
+      background-color: var(--color-bg-warm);
+      border: 1px solid rgba(181, 128, 58, 0.2);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+    }
+    .license-card h3 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .license-card .price {
+      font-size: 1.7rem;
+      color: var(--color-text-dark);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .license-card p {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      color: #7a6a58;
+      line-height: 1.5;
+    }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      background-color: var(--color-accent);
+      padding: 3.5rem var(--gutter);
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 0.7rem;
+    }
+    .cta-banner p {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.8rem;
+    }
+    .cta-banner .btn {
+      background-color: var(--color-bg-dark);
+      color: var(--color-accent-lt);
+    }
+    .cta-banner .btn:hover {
+      background-color: var(--color-bg-medium);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <h1><a href="index.html" style="color:inherit;text-decoration:none;">A. Donis</a></h1>
+        <p class="subtitle">
+          <span class="es-only">Poeta &amp; Escritor</span>
+          <span class="en-only">Poet &amp; Writer</span>
+        </p>
+      </div>
+      <nav>
+        <a href="index.html#sobre-mi">
+          <span class="es-only">Sobre mí</span>
+          <span class="en-only">About</span>
+        </a>
+        <a href="index.html#servicios">
+          <span class="es-only">Servicios</span>
+          <span class="en-only">Services</span>
+        </a>
+        <a href="index.html#muestras">
+          <span class="es-only">Trabajos</span>
+          <span class="en-only">Work</span>
+        </a>
+        <a href="pricing.html" style="color:var(--color-accent-lt);">
+          <span class="es-only">Tarifas</span>
+          <span class="en-only">Pricing</span>
+        </a>
+        <a href="index.html#contacto">
+          <span class="es-only">Contacto</span>
+          <span class="en-only">Contact</span>
+        </a>
+      </nav>
+      <div class="lang-switcher">
+        <label for="lang-select" class="lang-label">🌐</label>
+        <select id="lang-select" onchange="setLang(this.value)">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <div class="pricing-hero">
+    <div class="pricing-hero-inner">
+      <h1>
+        <span class="es-only">Simple. Honesto. Claro.</span>
+        <span class="en-only">Simple. Honest. Clear.</span>
+      </h1>
+      <p>
+        <span class="es-only">Sin tarifas ocultas. Sin paquetes vagos. Solo el trabajo, el precio y lo que recibes.</span>
+        <span class="en-only">No hidden fees. No vague packages. Just the work, the price, and what you get.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================== COPYWRITING PRICING ===================== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2>
+        <span class="es-only">Copywriting</span>
+        <span class="en-only">Copywriting</span>
+      </h2>
+      <p class="section-intro">
+        <span class="es-only">Textos con voz literaria para marcas que quieren destacar.</span>
+        <span class="en-only">Literary-voice copy for brands that want to stand out.</span>
+      </p>
+
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <h3>
+            <span class="es-only">Leyendas Sociales</span>
+            <span class="en-only">Social Captions</span>
+          </h3>
+          <p class="price">$150<span style="font-size:1rem;color:var(--color-text-muted);">/mo</span></p>
+          <p>
+            <span class="es-only">8 leyendas mensuales para redes sociales. Voz poética adaptada a tu marca. Entrega en 5 días hábiles.</span>
+            <span class="en-only">8 monthly social media captions. Poetic voice tailored to your brand. Delivered within 5 business days.</span>
+          </p>
+        </div>
+
+        <div class="pricing-card">
+          <h3>
+            <span class="es-only">Paquete Bilingüe</span>
+            <span class="en-only">Bilingual Package</span>
+          </h3>
+          <p class="price">$250<span style="font-size:1rem;color:var(--color-text-muted);">/mo</span></p>
+          <p>
+            <span class="es-only">Todo lo del paquete Social Captions, más versiones en español e inglés para cada texto. Ideal para marcas con audiencias diversas.</span>
+            <span class="en-only">Everything in Social Captions, plus Spanish and English versions for every piece. Ideal for brands with diverse audiences.</span>
+          </p>
+        </div>
+
+        <div class="pricing-card">
+          <h3>
+            <span class="es-only">Copywriting de Marca</span>
+            <span class="en-only">Brand Copy</span>
+          </h3>
+          <p class="price">$200<span style="font-size:1rem;color:var(--color-text-muted);">/project</span></p>
+          <p>
+            <span class="es-only">Taglines, declaraciones de marca, textos para web o catálogo. Un proyecto completo con voz literaria.</span>
+            <span class="en-only">Taglines, brand statements, web or catalog copy. One complete project with a literary voice.</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LICENSING PRICING ===================== -->
+  <section class="section section-light">
+    <div class="container">
+      <h2>
+        <span class="es-only">Licencias de uso</span>
+        <span class="en-only">Licensing</span>
+      </h2>
+      <p class="section-intro">
+        <span class="es-only">Usa los poemas de <em>Los Amores</em> en tu proyecto. Licencias claras y simples.</span>
+        <span class="en-only">License poems from <em>Los Amores</em> for your project. Clear, simple terms.</span>
+      </p>
+
+      <div class="license-grid">
+
+        <div class="license-card">
+          <h3>
+            <span class="es-only">Licencia Personal</span>
+            <span class="en-only">Personal License</span>
+          </h3>
+          <p class="price">$15</p>
+          <p>
+            <span class="es-only">Para uso personal no comercial: tarjetas, regalos, uso privado.</span>
+            <span class="en-only">For personal, non-commercial use: cards, gifts, private use.</span>
+          </p>
+        </div>
+
+        <div class="license-card">
+          <h3>
+            <span class="es-only">Licencia Comercial</span>
+            <span class="en-only">Commercial License</span>
+          </h3>
+          <p class="price">$150+</p>
+          <p>
+            <span class="es-only">Para uso comercial: campañas de marketing, productos para la venta, publicidad.</span>
+            <span class="en-only">For commercial use: marketing campaigns, products for sale, advertising.</span>
+          </p>
+        </div>
+
+        <div class="license-card">
+          <h3>
+            <span class="es-only">Licencia de Publicación</span>
+            <span class="en-only">Publication License</span>
+          </h3>
+          <p class="price">$75+</p>
+          <p>
+            <span class="es-only">Para publicaciones impresas o digitales: libros, revistas, antologías.</span>
+            <span class="en-only">For print or digital publications: books, magazines, anthologies.</span>
+          </p>
+        </div>
+
+        <div class="license-card">
+          <h3>
+            <span class="es-only">Licencia para Evento</span>
+            <span class="en-only">Event License</span>
+          </h3>
+          <p class="price">$200+</p>
+          <p>
+            <span class="es-only">Para recitaciones en bodas, ceremonias, eventos corporativos o culturales.</span>
+            <span class="en-only">For recitations at weddings, ceremonies, corporate or cultural events.</span>
+          </p>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;">
+        <p style="font-family:var(--font-sans);font-size:0.85rem;color:#7a6a58;margin-bottom:1rem;">
+          <span class="es-only">¿Tienes un proyecto especial? Escríbeme y conversamos.</span>
+          <span class="en-only">Have a special project? Reach out and we'll talk.</span>
+        </p>
+        <a href="index.html#contacto" class="btn">
+          <span class="es-only">Solicitar licencia →</span>
+          <span class="en-only">Request a license →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <div class="cta-banner">
+    <div class="container">
+      <h2>
+        <span class="es-only">¿Quieres un poema solo para ti?</span>
+        <span class="en-only">Want a poem written just for you?</span>
+      </h2>
+      <p>
+        <span class="es-only">Las comisiones personalizadas son mi trabajo más íntimo. Cuéntame tu historia.</span>
+        <span class="en-only">Custom commissions are my most personal work. Tell me your story.</span>
+      </p>
+      <a href="commissions.html" class="btn">
+        <span class="es-only">Ver comisiones →</span>
+        <span class="en-only">See commissions →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2025 A. Donis · <em>Los Amores</em></p>
+      <p class="footer-links">
+        <a href="index.html">
+          <span class="es-only">Inicio</span>
+          <span class="en-only">Home</span>
+        </a> ·
+        <a href="index.html#poemas">
+          <span class="es-only">Colección</span>
+          <span class="en-only">Collection</span>
+        </a> ·
+        <a href="pricing.html">
+          <span class="es-only">Tarifas</span>
+          <span class="en-only">Pricing</span>
+        </a> ·
+        <a href="commissions.html">
+          <span class="es-only">Comisiones</span>
+          <span class="en-only">Commissions</span>
+        </a> ·
+        <a href="index.html#contacto">
+          <span class="es-only">Contacto</span>
+          <span class="en-only">Contact</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===================== LANGUAGE SCRIPT ===================== -->
+  <script>
+    function setLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('lang-select').value = lang;
+      localStorage.setItem('adonis-lang', lang);
+    }
+    (function () {
+      const saved = localStorage.getItem('adonis-lang');
+      if (saved === 'en' || saved === 'es') setLang(saved);
+    })();
+  </script>
+
+</body>
+</html>
