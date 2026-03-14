@@ -1,1 +1,102 @@
-Poetry
+# A. Donis — *Los Amores* 🌿
+
+¡Hola! This is your **poetry repository on GitHub**. Think of GitHub as a folder on the internet where all your files live — and where your future website will be hosted for free.
+
+Everything here is branded as **A. Donis** — your pen name is the brand on the website, the bio, the license documents, the pitch, everything.
+
+Here is a map of everything that's here and where to find it.
+
+---
+
+## 🤔 What exactly is this website?
+
+**Short answer: it's your all-in-one professional home as a writer.**
+
+It is NOT just a copywriting website. It's a poet's portfolio that does three things at once:
+
+1. **Shows who you are** — bilingual poet and writer, author of *Los Amores*
+2. **Showcases your work** — sample poems from the collection, plus copywriting lines
+3. **Offers your services** — custom commissions, licensing, and poetic copywriting for brands
+
+Think of it like an artist's portfolio + services menu + contact page, all in one URL. A client who wants a wedding poem finds it here. A brand that wants a tagline finds it here. A literary magazine that wants to know who you are finds it here. Everything in one place, under the A. Donis brand.
+
+---
+
+## ✏️ First thing to do — add your contact details
+
+All the contact placeholders across the site and marketing docs are listed in one place:
+
+👉 **[`CONTACT_INFO.md`](./CONTACT_INFO.md)** ← open this first
+
+You can either fill it in yourself, or just reply to the pull request with your email and Instagram handle and I'll update everything for you.
+
+---
+
+## 🌐 Tu sitio web / Your website
+
+The portfolio website lives in the [`/portfolio`](./portfolio) folder.
+
+**To make it a real, live website** (so people can visit it at a URL like `jorge11-7.github.io/Poetry`), you just need to turn on **GitHub Pages** — it's free and takes 2 minutes:
+
+1. Go to your repository on GitHub: `https://github.com/Jorge11-7/Poetry`
+2. Click the **⚙️ Settings** tab (top of the page)
+3. In the left sidebar, click **Pages**
+4. Under *Branch*, select **`main`** (once this PR is merged) → folder **`/(root)`** → click **Save**
+5. Wait ~2 minutes, then visit: **`https://jorge11-7.github.io/Poetry/portfolio/`** — that's your website! ✨
+
+---
+
+## 📖 La colección / The collection
+
+| File | What it is |
+|------|-----------|
+| [`Los_Amores/los_amores.md`](./Los_Amores/los_amores.md) | The full text of all 6 poems — **click to read right here on GitHub** |
+
+---
+
+## 📣 Marketing materials
+
+These are ready-to-use documents. Click any link to read them on GitHub.
+
+| File | What it is |
+|------|-----------|
+| [`marketing/bio.md`](./marketing/bio.md) | Your author bio (Spanish + English) — copy/paste into Instagram, Submittable, etc. |
+| [`marketing/pitch.md`](./marketing/pitch.md) | A pitch you can send to brands, magazines, or event organizers |
+| [`marketing/email_templates.md`](./marketing/email_templates.md) | 3 ready-to-send email templates for commissions, licensing, and copywriting clients |
+| [`marketing/weekly_plan.md`](./marketing/weekly_plan.md) | A weekly content & publishing schedule |
+
+---
+
+## ⚖️ Licensing documents
+
+| File | What it is |
+|------|-----------|
+| [`licensing/pricing.md`](./licensing/pricing.md) | Pricing tiers for commissions and poem licenses |
+| [`licensing/license_template.md`](./licensing/license_template.md) | A license agreement you can send to anyone who wants to use your poems |
+
+---
+
+## 👤 Client intake
+
+| File | What it is |
+|------|-----------|
+| [`clients/client_intake_form.md`](./clients/client_intake_form.md) | A questionnaire to send to commission clients so you know what poem to write |
+
+---
+
+## 📋 Submissions tracker
+
+| File | What it is |
+|------|-----------|
+| [`submissions/submissions_tracker.md`](./submissions/submissions_tracker.md) | A table to track where you've submitted your work (literary magazines, contests, etc.) |
+
+---
+
+## ❓ How to read any file
+
+Just click the link in this README and GitHub will display it beautifully right in your browser — no downloads needed. The `.md` files are written in **Markdown**, which GitHub renders as formatted text (bold, headers, tables, etc.).
+
+---
+
+*© A. Donis · Los Amores*
+
