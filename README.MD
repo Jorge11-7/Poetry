@@ -98,5 +98,36 @@ Just click the link in this README and GitHub will display it beautifully right 
 
 ---
 
+## ✏️ How to edit your website (or any file)
+
+You can edit any file — including the website — **directly on GitHub.com** without installing anything. Here's how:
+
+### Quick edit — any file
+
+1. Navigate to the file you want to change (for example, [`portfolio/index.html`](./portfolio/index.html))
+2. Click the **pencil icon** (✏️) in the top-right corner of the file view
+3. Make your changes in the editor
+4. Scroll down and click **"Commit changes"**
+5. Done! If GitHub Pages is on, your website will update automatically in ~1–2 minutes
+
+### What to edit for common changes
+
+| I want to… | File to edit | What to look for |
+|-------------|-------------|-----------------|
+| Change my bio text | `portfolio/index.html` | Look for the `<!-- SOBRE MÍ / ABOUT -->` section |
+| Add or remove a poem | `portfolio/index.html` | Look for the `<!-- POEMAS / POEMS -->` section — copy an existing `poem-card` block and change the text |
+| Change colors or fonts | `portfolio/style.css` | Colors are at the top (e.g. `#b5803a` is the gold accent) |
+| Update contact info | `portfolio/index.html` | Look for the `<!-- CONTACTO / CONTACT -->` section |
+| Update pricing | `licensing/pricing.md` | Open the file and edit the numbers |
+| Update your bio for social media | `marketing/bio.md` | Edit the text directly |
+
+### Tips for beginners
+
+- **You can't break anything permanently** — GitHub saves every version of every file. If you make a mistake, you can always go to the file's history and revert.
+- **Preview before saving** — when editing `.md` files, click the **"Preview"** tab to see how it will look before committing.
+- **Want help with a change?** — Open a new Issue on your repository (click the **Issues** tab → **New issue**), describe what you want to change, and assign **Copilot** to help you.
+
+---
+
 *© A. Donis · Los Amores*
 
