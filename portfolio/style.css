@@ -101,6 +101,11 @@ header {
   gap: 0.5rem;
 }
 
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .brand h1 {
   font-size: 1.6rem;
   font-weight: 400;
