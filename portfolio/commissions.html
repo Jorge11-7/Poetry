@@ -213,6 +213,7 @@
           <span class="en-only">Poet &amp; Writer</span>
         </p>
       </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
       <nav>
         <a href="index.html#sobre-mi">
           <span class="es-only">Sobre mí</span>
@@ -613,6 +614,22 @@
 
   <!-- ===================== LANGUAGE SCRIPT ===================== -->
   <script>
+    function toggleMenu() {
+      var nav = document.querySelector('nav');
+      var btn = document.querySelector('.hamburger');
+      nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+      btn.textContent = nav.classList.contains('open') ? '\u2715' : '\u2630';
+    }
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('nav a')) {
+        var nav = document.querySelector('nav');
+        var btn = document.querySelector('.hamburger');
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '\u2630';
+      }
+    });
     function setLang(lang) {
       document.documentElement.setAttribute('data-lang', lang);
       document.documentElement.lang = lang;

@@ -630,6 +630,63 @@ html[data-lang="es"] .en-only { display: none; }
   color: var(--color-text-light);
 }
 
+/* ── Hamburger Menu ── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-accent-lt);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    order: 3;
+  }
+
+  .brand {
+    flex: 1;
+  }
+
+  .lang-switcher {
+    order: 2;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  nav {
+    order: 10;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-top: 0.5px solid rgba(181, 128, 58, 0.4);
+    margin-top: 0.5rem;
+  }
+
+  nav.open {
+    max-height: 500px;
+  }
+
+  nav a {
+    padding: 0.7rem 0;
+    border-bottom: 0.5px solid rgba(181, 128, 58, 0.15);
+  }
+
+  nav a::after {
+    display: none;
+  }
+}
+
 /* ── Responsive ── */
 @media (max-width: 700px) {
   .two-col {
@@ -643,11 +700,6 @@ html[data-lang="es"] .en-only { display: none; }
 
   .hero-quote {
     font-size: 1.3rem;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .poem-card {
