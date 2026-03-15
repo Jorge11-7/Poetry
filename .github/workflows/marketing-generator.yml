@@ -1,0 +1,84 @@
+name: Generate Marketing Content
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Los_Amores/**'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-marketing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Generate marketing content for each poem
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          mkdir -p marketing
+
+          if git rev-parse HEAD~1 > /dev/null 2>&1; then
+            CHANGED_FILES=$(git diff-tree --no-commit-id -r --diff-filter=AM --name-only HEAD -- 'Los_Amores/')
+          else
+            CHANGED_FILES=$(git ls-tree -r --name-only HEAD -- 'Los_Amores/')
+          fi
+
+          echo "$CHANGED_FILES" | while IFS= read -r file; do
+            if [ -f "$file" ]; then
+              POEM_CONTENT=$(cat "$file")
+              POEM_FILENAME=$(basename "$file")
+              POEM_NAME="${POEM_FILENAME%.*}"
+
+              echo "Processing: $file"
+
+              PAYLOAD=$(jq -n \
+                --arg system "You are the marketing agent for A. Donis, a bilingual poet from Dallas, Texas. Generate complete marketing content for the poem provided. Include: 2 TikTok captions, 15 hashtags, 1 Etsy listing title and description, 13 Etsy tags, 1 Pinterest pin title and description, and 1 Gumroad product description. Write in both English and Spanish. Brand voice: literary, soulful, intimate." \
+                --arg content "$POEM_CONTENT" \
+                '{
+                  model: "claude-sonnet-4-20250514",
+                  max_tokens: 4096,
+                  system: $system,
+                  messages: [
+                    {
+                      role: "user",
+                      content: $content
+                    }
+                  ]
+                }')
+
+              RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+                -H "Content-Type: application/json" \
+                -H "x-api-key: $ANTHROPIC_API_KEY" \
+                -H "anthropic-version: 2023-06-01" \
+                -d "$PAYLOAD")
+
+              if echo "$RESPONSE" | jq -e '.error' > /dev/null 2>&1; then
+                echo "Anthropic API error for $file: $(echo "$RESPONSE" | jq -r '.error.message')"
+                exit 1
+              fi
+
+              MARKETING_CONTENT=$(echo "$RESPONSE" | jq -r '.content[0].text')
+
+              echo "# Marketing Content for: $POEM_NAME" > "marketing/${POEM_NAME}.md"
+              echo "" >> "marketing/${POEM_NAME}.md"
+              echo "$MARKETING_CONTENT" >> "marketing/${POEM_NAME}.md"
+
+              echo "Saved marketing content to: marketing/${POEM_NAME}.md"
+            fi
+          done
+
+      - name: Commit and push marketing content
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add marketing/
+          git diff --staged --quiet || git commit -m "Add marketing content for updated poems [skip ci]"
+          git push
